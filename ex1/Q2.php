@@ -20,11 +20,11 @@ adicionarALista(
 
 // 02.c
 removerBanco($bancos, "4444");
-echo "PHP_EOL" . PHP_EOL;
+echo PHP_EOL;
 listarVetor($bancos);
 
 // 02.d
 editarValor($bancos, "7777", "estado",  "Rio Grande do Sul");
 removerBanco($bancos, "4444");
-echo "PHP_EOL" . PHP_EOL;
+echo PHP_EOL;
 listarVetor($bancos);

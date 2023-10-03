@@ -4,8 +4,8 @@ function listarVetor(array &$bancos)
 {
   foreach ($bancos as $chave => $valor) {
     echo $chave;
-    foreach ($valor as $k => $s) {
-      echo  ", " . $s;
+    foreach ($valor as $chaveInterna => $valorAsossiativo) {
+      echo  ", " . $valorAsossiativo;
     }
     echo PHP_EOL;
   }

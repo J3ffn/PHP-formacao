@@ -1,0 +1,44 @@
+.lista-bicicletas {
+    display: flex;
+    flex-direction: column;
+    padding: 90px 50px 30px;
+    gap: 25px;
+}
+
+.admin img {
+    height: 400px;
+}
+
+.bicicleta-container {
+    display: grid;
+    grid-template-columns: auto auto 0.5fr;
+    gap: 20px;
+    border: 2px solid var(--cor-11);
+    border-radius: 6px;
+}
+
+.img-container {
+    grid-column: 1;
+}
+
+.img-container img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.info-bicicletas {
+    display: flex;
+    grid-column: 2;
+    flex-direction: column;
+    border-radius: 4px solid var(--cor-11);
+}
+
+.edicao-bicicleta {
+    display: grid;
+    grid-column: 3;
+    align-self: end;
+    justify-items: end;
+    gap: 20px;
+    margin: 10px;
+}
+

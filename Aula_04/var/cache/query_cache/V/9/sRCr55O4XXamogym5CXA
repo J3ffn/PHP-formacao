@@ -1,0 +1,96 @@
+<?php //51e6e110407664f7e071472241782927
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT s0_.id AS id_0, s0_.nome AS nome_1, p1_.id_phone AS id_phone_2, p1_.number AS number_3, c2_.id AS id_4, c2_.nome AS nome_5, p1_.student_id AS student_id_6 FROM Student s0_ LEFT JOIN Phone p1_ ON s0_.id = p1_.student_id LEFT JOIN student_course s3_ ON s0_.id = s3_.student_id LEFT JOIN Course c2_ ON c2_.id = s3_.course_id',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'student' => 'alura\\Doctrine\\Entity\\Student',
+                    'phone' => 'alura\\Doctrine\\Entity\\Phone',
+                    'course' => 'alura\\Doctrine\\Entity\\Course',
+                ],
+            ],
+            'relationMap' => [
+                2 => [
+                    'phone' => 'phones',
+                    'course' => 'courses',
+                ],
+            ],
+            'parentAliasMap' => [
+                2 => [
+                    'phone' => 'student',
+                    'course' => 'student',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'nome_1' => 'nome',
+                    'id_phone_2' => 'id',
+                    'number_3' => 'number',
+                    'id_4' => 'id',
+                    'nome_5' => 'nome',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'student_id_6' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'student' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'student_id_6' => 'student_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'student',
+                    'nome_1' => 'student',
+                    'id_phone_2' => 'phone',
+                    'number_3' => 'phone',
+                    'id_4' => 'course',
+                    'nome_5' => 'course',
+                    'student_id_6' => 'phone',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'alura\\Doctrine\\Entity\\Student',
+                    'nome_1' => 'alura\\Doctrine\\Entity\\Student',
+                    'id_phone_2' => 'alura\\Doctrine\\Entity\\Phone',
+                    'number_3' => 'alura\\Doctrine\\Entity\\Phone',
+                    'id_4' => 'alura\\Doctrine\\Entity\\Course',
+                    'nome_5' => 'alura\\Doctrine\\Entity\\Course',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);
